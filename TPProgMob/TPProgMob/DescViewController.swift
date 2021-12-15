@@ -12,7 +12,7 @@ class DescViewController: UIViewController {
     @IBOutlet weak var DescDesc: UILabel!
     @IBOutlet weak var DescTitre: UILabel!
     
-    var todo = Todo(title: "Titre",description: "Description",image: "")
+    var todo = Todo(title: "Titre",description: "Description",datereal:Date(), category: "Categorie")
     
     override func viewDidLoad() {
         super.viewDidLoad()

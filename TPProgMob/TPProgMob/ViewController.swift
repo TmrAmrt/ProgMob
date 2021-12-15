@@ -10,6 +10,9 @@ import UIKit
 class ViewController: UIViewController,UITableViewDataSource {
     
     var myData = [Todo]()
+    var myDataFiltered = [Todo]()
+    var myFilter = String()
+    
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,73 +21,74 @@ class ViewController: UIViewController,UITableViewDataSource {
         for i in 1...5{
             
             myData.append(Todo(title: "Tache n° " + String(i),
-                                 description:"Description de la tache " + String(i) + " non définie...",
-                                 image: String(Int.random(in:1...5))))
-            
-            
+                               description:"Description de la tache " + String(i) + " non définie...",
+                               datereal: Date(),category: "RDV")
+                          )
         }
+        
+        
+        
+        updateMyData()
+        
+        
+        
         myTableView.dataSource = self
-        
-    
-        
-        
     }
+
     @IBAction func btnAddClicked(_ sender: Any) {
-        
-        
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myData.count
-        
+        return myDataFiltered.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
-        cell.myTitle.text = myData[indexPath.row].title
-        cell.myDescription.text = myData[indexPath.row].description
-        cell.myImage.image = UIImage(named: myData[indexPath.row].image)
+        cell.myTitle.text = myDataFiltered[indexPath.row].title
+        cell.myDescription.text = myDataFiltered[indexPath.row].description
         return cell
     }
     
-    @IBAction func swipeRight(_ sender: Any) {
-        myData.remove(at: myTableView.indexPathForSelectedRow!.row)
-        
-        }
+   
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let row = indexPath.row
-            myData.remove(at: row)
+            myDataFiltered.remove(at: row)
             myTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "afficherDetails"{
             let destination = segue.destination as! DescViewController
             let indexPath = myTableView.indexPathForSelectedRow!
             let row = indexPath.row
-            destination.todo = myData[row]
+            destination.todo = myDataFiltered[row]
+            updateMyData()
+        }
+        if segue.identifier == "catchosen"{
+            
+            let destination = segue.destination as! MainViewController
+            myFilter = destination.myCategories[destination.MyCatTableView.indexPathForSelectedRow!.row]
             
             
         }
+        
+    }
+    func updateMyData(){
+        myDataFiltered = myData.filter{$0.category==myFilter}
+        myDataFiltered.sort(by: {(e1,e2)->Bool in return e1.datereal < e2.datereal})
+        myTableView.reloadData()
     }
     
     @IBAction func addtask(_ unwindSegue: UIStoryboardSegue) {
-        //        let addViewController = unwindSegue.source as! AddViewController
-//        if unwindSegue.identifier == "cancel" {
-//            addViewController.dismiss(animated: true, completion: nil)
-//        }
-//       if unwindSegue.identifier == "save" {
-//            if let myTitle = addViewController.myTitle.text, let myDescription = addViewController.myDescription.text {
-    //            let new_data = MyData(title: myTitle,
-      //                                description: myDescription,
-        //                              image: String(Int.random(in: 1...5)))
-         //       myData.append(new_data)
-          //      myTableView.reloadData()
-           // }
-    
-    
-    }}
+        if let destination = unwindSegue.source as? AddViewController{
+            myData.append(Todo(title : destination.nom.text!, description : destination.descriptif.text!, datereal: destination.dater.date, category: destination.categorie.text!))
+            updateMyData()
+            
+        }
+    }
+}
 

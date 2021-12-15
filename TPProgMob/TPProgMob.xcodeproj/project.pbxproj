@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		811358B5275A6FC600EA5D15 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811358B4275A6FC600EA5D15 /* AddViewController.swift */; };
+		811E63CB2769FC540017EB10 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811E63CA2769FC540017EB10 /* MainViewController.swift */; };
+		811E63D32769FDA30017EB10 /* CatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811E63D22769FDA30017EB10 /* CatTableViewCell.swift */; };
 		813FCF94275A4396004C1CCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FCF93275A4396004C1CCB /* AppDelegate.swift */; };
 		813FCF96275A4396004C1CCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FCF95275A4396004C1CCB /* SceneDelegate.swift */; };
 		813FCF98275A4396004C1CCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813FCF97275A4396004C1CCB /* ViewController.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		811358B4275A6FC600EA5D15 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		811E63CA2769FC540017EB10 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		811E63D22769FDA30017EB10 /* CatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatTableViewCell.swift; sourceTree = "<group>"; };
 		813FCF90275A4396004C1CCB /* TPProgMob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPProgMob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813FCF93275A4396004C1CCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		813FCF95275A4396004C1CCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,10 +118,12 @@
 				813FCF9C275A439C004C1CCB /* Assets.xcassets */,
 				813FCFD9275A4721004C1CCB /* Todo.swift */,
 				813FCFD1275A4623004C1CCB /* TableViewCell.swift */,
+				811E63D22769FDA30017EB10 /* CatTableViewCell.swift */,
+				813FCF99275A4396004C1CCB /* Main.storyboard */,
 				813FCFEF275A5D60004C1CCB /* DescViewController.swift */,
 				811358B4275A6FC600EA5D15 /* AddViewController.swift */,
+				811E63CA2769FC540017EB10 /* MainViewController.swift */,
 				813FCF97275A4396004C1CCB /* ViewController.swift */,
-				813FCF99275A4396004C1CCB /* Main.storyboard */,
 			);
 			path = TPProgMob;
 			sourceTree = "<group>";
@@ -277,6 +283,8 @@
 				813FCF96275A4396004C1CCB /* SceneDelegate.swift in Sources */,
 				813FCFD2275A4623004C1CCB /* TableViewCell.swift in Sources */,
 				813FCFDA275A4721004C1CCB /* Todo.swift in Sources */,
+				811E63D32769FDA30017EB10 /* CatTableViewCell.swift in Sources */,
+				811E63CB2769FC540017EB10 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPProgMob/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,6 +481,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPProgMob/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,7 +500,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPProgMobTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,7 +521,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPProgMobTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -531,6 +541,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPProgMobUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,6 +561,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TPProgMobUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

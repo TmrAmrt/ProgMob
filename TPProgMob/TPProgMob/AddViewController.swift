@@ -8,9 +8,11 @@
 import UIKit
 
 class AddViewController: UIViewController {
-    @IBOutlet weak var newTitle: UITextField!
     
-    @IBOutlet weak var newDesc: UITextView!
+    @IBOutlet weak var nom: UITextField!
+    @IBOutlet weak var dater: UIDatePicker!
+    @IBOutlet weak var descriptif: UITextView!
+    @IBOutlet weak var categorie: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +23,7 @@ class AddViewController: UIViewController {
         
     
     
-    
-    @IBAction func btnValidate(_ sender: Any) {
-        Todo(title: newTitle.text ?? "Title", description: newDesc.text ?? "Descr", image: "")
-    }
+
     
     
     
