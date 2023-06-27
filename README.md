@@ -8,7 +8,7 @@ The second project is a ToDo app in Swift, less advanced that the first project,
 Its goal was to understand the differences between the two programming languages and to grasp the unique features of Swift.
 
 These two app were made with education in mind and some of the feature may not be implemented the best way.
-Choices made during development (e.g listView instead of recyclerView) reflect this aducational purpose,
+Choices made during development (e.g listView instead of recyclerView) reflect this educational purpose,
 they allowed a better display of the technicalities of the language used.
 
 A lot of improvements could still be made on those apps, but they weren't deemed necessary,
